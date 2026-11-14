@@ -50,7 +50,7 @@ export default function ProductCard({ product, index = 0, light = false, priorit
         </Link>
 
         {label && (
-          <span className={cn("absolute left-3 top-3 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide2", product.compareAt ? "bg-cream text-ink" : "bg-ink/80 text-gold backdrop-blur")}>
+          <span className={cn("absolute left-3 top-3 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide2", product.compareAt ? "bg-cream text-deep" : "bg-ink/80 text-gold backdrop-blur")}>
             {label}
           </span>
         )}
@@ -69,7 +69,7 @@ export default function ProductCard({ product, index = 0, light = false, priorit
           <button type="button" onClick={() => setQuickView(product.id)} aria-label={`Quick view ${product.name}`} className="flex h-10 w-10 items-center justify-center bg-ink/85 text-white backdrop-blur hover:text-gold">
             <Eye size={16} strokeWidth={1.5} />
           </button>
-          <button type="button" onClick={quickAdd} className="flex h-10 items-center justify-center gap-2 bg-cream text-[11px] font-bold uppercase tracking-wide2 text-ink transition-colors hover:bg-gold">
+          <button type="button" onClick={quickAdd} className="flex h-10 items-center justify-center gap-2 bg-cream text-[11px] font-bold uppercase tracking-wide2 text-deep transition-colors hover:bg-gold hover:text-on-gold">
             <Plus size={14} /> {product.sizes?.length ? "Select Size" : "Add to Cart"}
           </button>
         </div>
@@ -78,9 +78,9 @@ export default function ProductCard({ product, index = 0, light = false, priorit
       <div className="flex flex-1 flex-col pt-4">
         <p className={cn("text-[10px] font-semibold uppercase tracking-wide2", light ? "text-bronze" : "text-muted")}>{getCategory(product.category)?.name}</p>
         <h3 className="mt-1.5 text-[15px] font-medium leading-snug">
-          <Link href={`/product/${product.slug}`} className={cn("transition-colors", light ? "text-ink hover:text-bronze" : "hover:text-gold")}>{product.name}</Link>
+          <Link href={`/product/${product.slug}`} className={cn("transition-colors", light ? "text-deep hover:text-bronze" : "hover:text-gold")}>{product.name}</Link>
         </h3>
-        <Price price={product.price} compareAt={product.compareAt} className={cn("mt-2", light ? "text-ink" : "")} />
+        <Price price={product.price} compareAt={product.compareAt} className={cn("mt-2", light ? "text-deep" : "")} />
       </div>
     </motion.article>
   );

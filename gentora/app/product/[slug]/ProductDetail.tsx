@@ -84,7 +84,7 @@ export default function ProductDetail({ product, related }: { product: Product; 
                 <div className="group relative aspect-[4/5] flex-1 overflow-hidden bg-surface">
                   <AnimatePresence mode="wait">
                     {mode3d && model ? (
-                      <motion.div key="3d" className="absolute inset-0 cursor-grab active:cursor-grabbing" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+                      <motion.div key="3d" className="dark-zone absolute inset-0 cursor-grab active:cursor-grabbing" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
                         style={{ background: "radial-gradient(80% 60% at 50% 40%, #2a2724, #141414 70%)" }}>
                         <ErrorBoundary fallback={<SmartImage src={product.images[0]} alt={product.name} fill className="object-cover" />}>
                           <MiniViewer kind={model.kind} variant={model.variant} />
@@ -98,7 +98,7 @@ export default function ProductDetail({ product, related }: { product: Product; 
                     )}
                   </AnimatePresence>
                   {product.badge && !mode3d && (
-                    <span className={cn("absolute left-4 top-4 px-3 py-1.5 text-[10px] font-bold uppercase tracking-wide2", product.compareAt ? "bg-cream text-ink" : "bg-ink/80 text-gold")}>{product.compareAt ? `Sale −${off}%` : product.badge}</span>
+                    <span className={cn("absolute left-4 top-4 px-3 py-1.5 text-[10px] font-bold uppercase tracking-wide2", product.compareAt ? "bg-cream text-deep" : "bg-ink/80 text-gold")}>{product.compareAt ? `Sale −${off}%` : product.badge}</span>
                   )}
                 </div>
               </div>

@@ -88,12 +88,13 @@ export default function Navbar() {
 
   return (
     <>
-      <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:bg-gold focus:px-4 focus:py-2 focus:text-ink">
+      <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:bg-gold focus:px-4 focus:py-2 focus:text-on-gold">
         Skip to content
       </a>
       <header
         className={cn(
           "fixed inset-x-0 top-0 z-50 transition-all duration-700 ease-luxe",
+          !solid && "dark-zone",
           solid ? "border-b border-line bg-ink/90 backdrop-blur-xl" : "border-b border-transparent bg-gradient-to-b from-black/50 to-transparent",
           hidden && !menuOpen ? "-translate-y-full" : "translate-y-0"
         )}
@@ -184,7 +185,7 @@ function IconBtn({
             animate={{ scale: [1.5, 1] }}
             exit={{ scale: 0 }}
             transition={{ duration: 0.45 }}
-            className="absolute -right-0.5 -top-0.5 flex h-[17px] min-w-[17px] items-center justify-center rounded-full bg-gold px-1 text-[10px] font-bold text-ink"
+            className="absolute -right-0.5 -top-0.5 flex h-[17px] min-w-[17px] items-center justify-center rounded-full bg-gold px-1 text-[10px] font-bold text-on-gold"
           >
             {badge}
           </motion.span>

@@ -27,12 +27,12 @@ export default function SectionHeading({
             <p className={cn("eyebrow mb-5", !dark && "text-bronze")}>{eyebrow}</p>
           </Reveal>
         )}
-        <h2 className={cn("h-display text-4xl sm:text-5xl lg:text-6xl", dark ? "text-white" : "text-ink")}>
+        <h2 className={cn("h-display text-4xl sm:text-5xl lg:text-6xl", dark ? "text-white" : "text-deep")}>
           <RevealText text={title} />
         </h2>
         {intro && (
           <Reveal delay={0.15} y={16}>
-            <p className={cn("mt-5 max-w-xl text-[15px] leading-relaxed", dark ? "text-muted" : "text-ink/65", align === "center" && "mx-auto")}>{intro}</p>
+            <p className={cn("mt-5 max-w-xl text-[15px] leading-relaxed", dark ? "text-muted" : "text-deep/65", align === "center" && "mx-auto")}>{intro}</p>
           </Reveal>
         )}
       </div>

@@ -83,13 +83,13 @@ export default function PurchasePanel({ product, onAdded, compact }: { product: 
                 type="button"
                 onClick={() => { setSize(s); setError(""); }}
                 aria-pressed={size === s}
-                className={cn("h-11 min-w-[52px] border px-3 text-sm transition-colors", size === s ? "border-gold bg-gold text-ink" : "border-white/15 text-white/85 hover:border-gold")}
+                className={cn("h-11 min-w-[52px] border px-3 text-sm transition-colors", size === s ? "border-gold bg-gold text-on-gold" : "border-white/15 text-white/85 hover:border-gold")}
               >
                 {s}
               </button>
             ))}
           </div>
-          {error && <p role="alert" className="mt-3 text-sm text-[#E8A08A]">{error}</p>}
+          {error && <p role="alert" className="mt-3 text-sm text-[#B4533A]">{error}</p>}
         </fieldset>
       )}
 

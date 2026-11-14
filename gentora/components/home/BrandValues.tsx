@@ -29,7 +29,7 @@ export default function BrandValues() {
             >
               <span className="absolute left-0 top-0 h-px w-0 bg-gold transition-all duration-700 group-hover:w-full" />
               <p className="font-display text-sm italic text-white/30">0{i + 1}</p>
-              <div className="mt-8 flex h-16 w-16 items-center justify-center rounded-full border border-gold/40 text-gold transition-all duration-700 group-hover:bg-gold group-hover:text-ink">
+              <div className="mt-8 flex h-16 w-16 items-center justify-center rounded-full border border-gold/40 text-gold transition-all duration-700 group-hover:bg-gold group-hover:text-on-gold">
                 <Icon size={24} strokeWidth={1.25} />
               </div>
               <h3 className="mt-8 font-display text-3xl">{title}</h3>

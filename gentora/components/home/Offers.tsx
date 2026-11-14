@@ -15,7 +15,7 @@ export default function Offers() {
   const scale = useTransform(scrollYProgress, [0, 0.5], [1.15, 1]);
 
   return (
-    <section ref={ref} className="grain relative flex min-h-[80vh] items-center overflow-hidden bg-ink py-28" aria-label="Special collection">
+    <section ref={ref} className="dark-zone grain relative flex min-h-[80vh] items-center overflow-hidden bg-ink py-28" aria-label="Special collection">
       <motion.div style={{ y, scale }} className="absolute inset-[-12%_0]">
         <SmartImage src={IMG.offers} fallbackSrc={IMG.meeting} alt="Sharply dressed man in a modern city setting" fill sizes="100vw" className="object-cover" fallbackLabel="Upgrade your professional style" />
       </motion.div>

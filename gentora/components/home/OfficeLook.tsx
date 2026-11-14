@@ -29,7 +29,7 @@ export default function OfficeLook() {
   const toggle = (id: string) => setSelected((s) => (s.includes(id) ? s.filter((x) => x !== id) : [...s, id]));
 
   return (
-    <section className="bg-cream py-28 text-ink lg:py-36" aria-labelledby="look-title">
+    <section className="bg-surface py-28 text-deep lg:py-36" aria-labelledby="look-title">
       <div className="container-site grid gap-14 lg:grid-cols-12 lg:gap-16">
         <div className="relative min-w-0 lg:col-span-6">
           <div className="sticky top-28">
@@ -39,7 +39,7 @@ export default function OfficeLook() {
                 <button
                   key={i}
                   type="button"
-                  className={cn("absolute flex h-8 w-8 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full text-[11px] font-bold transition-all duration-500", hover === i ? "scale-125 bg-gold text-ink" : "bg-ink/80 text-gold backdrop-blur")}
+                  className={cn("absolute flex h-8 w-8 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full text-[11px] font-bold transition-all duration-500", hover === i ? "scale-125 bg-gold text-on-gold" : "bg-deep/80 text-[#C6A46A] backdrop-blur")}
                   style={h}
                   onMouseEnter={() => setHover(i)}
                   onMouseLeave={() => setHover(null)}
@@ -52,7 +52,7 @@ export default function OfficeLook() {
                 </button>
               ))}
             </div>
-            <p className="mt-3 text-[11px] uppercase tracking-wide2 text-ink/50">Styled look · Hover the markers</p>
+            <p className="mt-3 text-[11px] uppercase tracking-wide2 text-deep/50">Styled look · Hover the markers</p>
           </div>
         </div>
 
@@ -61,16 +61,16 @@ export default function OfficeLook() {
           <h2 id="look-title" className="h-display text-5xl sm:text-6xl lg:text-7xl">
             <RevealText text="THE COMPLETE" /><br /><RevealText text="OFFICE LOOK" className="italic text-bronze" delay={0.15} />
           </h2>
-          <Reveal delay={0.15}><p className="mt-6 max-w-md text-[15px] leading-relaxed text-ink/65">Five pieces, one confident silhouette. Remove anything you already own — the total updates instantly.</p></Reveal>
+          <Reveal delay={0.15}><p className="mt-6 max-w-md text-[15px] leading-relaxed text-deep/65">Five pieces, one confident silhouette. Remove anything you already own — the total updates instantly.</p></Reveal>
 
-          <ul className="mt-10 divide-y divide-ink/10 border-y border-ink/10">
+          <ul className="mt-10 divide-y divide-deep/10 border-y border-deep/10">
             {items.map((i, idx) => {
               const on = selected.includes(i.productId);
               return (
                 <motion.li key={i.productId} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: idx * 0.08, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
                   onMouseEnter={() => setHover(idx)} onMouseLeave={() => setHover(null)}
-                  className={cn("flex items-center gap-3 py-4 transition-colors sm:gap-4", hover === idx && "bg-ink/[0.03]")}>
-                  <button type="button" onClick={() => toggle(i.productId)} aria-pressed={on} aria-label={`${on ? "Remove" : "Include"} ${i.product.name}`} className={cn("flex h-6 w-6 shrink-0 items-center justify-center border transition-colors", on ? "border-ink bg-ink text-gold" : "border-ink/30")}>
+                  className={cn("flex items-center gap-3 py-4 transition-colors sm:gap-4", hover === idx && "bg-deep/[0.03]")}>
+                  <button type="button" onClick={() => toggle(i.productId)} aria-pressed={on} aria-label={`${on ? "Remove" : "Include"} ${i.product.name}`} className={cn("flex h-6 w-6 shrink-0 items-center justify-center border transition-colors", on ? "border-deep bg-deep text-[#C6A46A]" : "border-deep/30")}>
                     {on && <Check size={13} />}
                   </button>
                   <span className="hidden w-5 font-display text-lg text-bronze sm:inline">{idx + 1}</span>
@@ -80,9 +80,9 @@ export default function OfficeLook() {
                   <div className="min-w-0 flex-1">
                     <p className="text-[10px] font-semibold uppercase tracking-wide2 text-bronze">{getCategory(i.product.category)?.name}</p>
                     <Link href={`/product/${i.product.slug}`} className="block truncate text-[15px] font-medium hover:text-bronze">{i.product.name}</Link>
-                    <p className="text-xs text-ink/50">{[i.color, i.size && `Size ${i.size}`].filter(Boolean).join(" · ")}</p>
+                    <p className="text-xs text-deep/50">{[i.color, i.size && `Size ${i.size}`].filter(Boolean).join(" · ")}</p>
                   </div>
-                  <span className={cn("text-[15px] font-semibold tabular-nums", !on && "text-ink/35 line-through")}>{formatBDT(i.product.price)}</span>
+                  <span className={cn("text-[15px] font-semibold tabular-nums", !on && "text-deep/35 line-through")}>{formatBDT(i.product.price)}</span>
                 </motion.li>
               );
             })}
@@ -90,7 +90,7 @@ export default function OfficeLook() {
 
           <div className="mt-8 flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
             <div>
-              <p className="text-[11px] uppercase tracking-wide2 text-ink/50">Look total · {chosen.length} pieces</p>
+              <p className="text-[11px] uppercase tracking-wide2 text-deep/50">Look total · {chosen.length} pieces</p>
               <p className="font-display text-5xl">{formatBDT(total)}</p>
             </div>
             <button
@@ -102,7 +102,7 @@ export default function OfficeLook() {
               <ShoppingBag size={16} /> Shop the Look
             </button>
           </div>
-          <p className="mt-4 text-xs text-ink/45">Pre-selected sizes: shirt M, trouser 32, belt 34 — adjust them in your cart.</p>
+          <p className="mt-4 text-xs text-deep/45">Pre-selected sizes: shirt M, trouser 32, belt 34 — adjust them in your cart.</p>
         </div>
       </div>
     </section>

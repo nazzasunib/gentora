@@ -31,7 +31,7 @@ export default function Categories() {
               transition={{ duration: 0.9, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
               className={cn("relative", layout[i])}
             >
-              <Link href={`/shop?category=${c.id}`} className="group absolute inset-0 overflow-hidden bg-surface" aria-label={`${c.name} — explore collection`}>
+              <Link href={`/shop?category=${c.id}`} className="dark-zone group absolute inset-0 overflow-hidden bg-surface" aria-label={`${c.name} — explore collection`}>
                 <SmartImage src={c.image} alt={c.name} fill sizes="(max-width:1024px) 100vw, 50vw" className="object-cover transition-transform duration-[1.6s] ease-luxe group-hover:scale-[1.07]" fallbackLabel={c.name} />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent transition-opacity duration-700 group-hover:opacity-90" />
                 <div className="absolute inset-0 border border-gold/0 transition-colors duration-700 group-hover:border-gold/40" />
@@ -45,7 +45,7 @@ export default function Categories() {
                       <span className="h-px w-6 bg-gold transition-all duration-500 group-hover:w-12" />
                     </span>
                   </div>
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/30 transition-all duration-500 group-hover:rotate-45 group-hover:border-gold group-hover:bg-gold group-hover:text-ink">
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/30 transition-all duration-500 group-hover:rotate-45 group-hover:border-gold group-hover:bg-gold group-hover:text-on-gold">
                     <ArrowUpRight size={18} />
                   </span>
                 </div>

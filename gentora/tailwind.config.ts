@@ -5,15 +5,22 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        ink: "#101010",
-        surface: "#1A1A1A",
-        "surface-2": "#222222",
-        gold: "#C6A46A",
-        "gold-soft": "#D8C094",
+        // theme-aware tokens (values live in globals.css; .dark-zone flips them)
+        ink: "rgb(var(--c-bg) / <alpha-value>)",
+        surface: "rgb(var(--c-surface) / <alpha-value>)",
+        "surface-2": "rgb(var(--c-surface-2) / <alpha-value>)",
+        white: "rgb(var(--c-fg) / <alpha-value>)",
+        gold: "rgb(var(--c-gold) / <alpha-value>)",
+        "gold-soft": "rgb(var(--c-gold-soft) / <alpha-value>)",
+        muted: "rgb(var(--c-muted) / <alpha-value>)",
+        line: "rgb(var(--c-fg) / 0.1)",
+        "on-gold": "rgb(var(--c-on-gold) / <alpha-value>)",
+        hv: "rgb(var(--c-hv) / <alpha-value>)",
+        "hv-fg": "rgb(var(--c-hv-fg) / <alpha-value>)",
+        // fixed tokens
+        deep: "#101010",
         bronze: "#8B7355",
         cream: "#F5F2EC",
-        muted: "#A5A5A5",
-        line: "rgba(255,255,255,0.08)",
       },
       fontFamily: {
         display: ['"Cormorant Garamond"', "Georgia", "serif"],

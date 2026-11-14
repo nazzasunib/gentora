@@ -27,7 +27,7 @@ export default function CartClient() {
       <section className="bg-ink pb-32 pt-12">
         <div className="container-site">
           {!hydrated ? (
-            <div className="h-64 animate-shimmer bg-[linear-gradient(90deg,#1a1a1a,#222,#1a1a1a)] bg-[length:200%_100%]" />
+            <div className="h-64 animate-shimmer bg-[linear-gradient(90deg,#ece8df,#f4f1ea,#ece8df)] bg-[length:200%_100%]" />
           ) : lines.length === 0 ? (
             <div className="flex flex-col items-center gap-5 py-24 text-center">
               <ShoppingBag size={40} strokeWidth={1} className="text-gold" />

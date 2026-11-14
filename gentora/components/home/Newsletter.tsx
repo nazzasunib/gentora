@@ -50,7 +50,7 @@ export default function Newsletter() {
                     {state === "loading" ? "Subscribing…" : <>Subscribe <ArrowRight size={15} /></>}
                   </button>
                 </div>
-                <p id="nl-msg" className={state === "error" ? "mt-3 text-sm text-[#E8A08A]" : "mt-3 text-xs text-white/40"} role={state === "error" ? "alert" : undefined}>
+                <p id="nl-msg" className={state === "error" ? "mt-3 text-sm text-[#B4533A]" : "mt-3 text-xs text-white/40"} role={state === "error" ? "alert" : undefined}>
                   {state === "error" ? msg : "Demo form — no email is actually sent. Unsubscribe anytime."}
                 </p>
               </motion.form>

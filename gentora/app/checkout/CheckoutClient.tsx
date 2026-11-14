@@ -42,7 +42,7 @@ export default function CheckoutClient() {
     onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => { setF({ ...f, [k]: e.target.value }); if (errors[k]) setErrors({ ...errors, [k]: undefined }); },
     "aria-invalid": !!errors[k],
     "aria-describedby": errors[k] ? `co-${k}-err` : undefined,
-    className: cn("input", errors[k] && "border-[#E8A08A]"),
+    className: cn("input", errors[k] && "border-[#B4533A]"),
   });
 
   const submit = (e: React.FormEvent) => {
@@ -65,7 +65,7 @@ export default function CheckoutClient() {
   const Label = ({ k, children }: { k: keyof Form; children: React.ReactNode }) => (
     <label htmlFor={`co-${k}`} className="mb-2 block text-[11px] font-semibold uppercase tracking-wide2 text-muted">{children}</label>
   );
-  const Err = ({ k }: { k: keyof Form }) => (errors[k] ? <p id={`co-${k}-err`} className="mt-2 text-xs text-[#E8A08A]">{errors[k]}</p> : null);
+  const Err = ({ k }: { k: keyof Form }) => (errors[k] ? <p id={`co-${k}-err`} className="mt-2 text-xs text-[#B4533A]">{errors[k]}</p> : null);
 
   if (order) {
     return (
@@ -149,7 +149,7 @@ export default function CheckoutClient() {
                       <li key={l.key} className="flex gap-4 py-4">
                         <span className="relative h-20 w-16 shrink-0 overflow-hidden bg-ink">
                           <SmartImage src={l.product.images[0]} alt="" fill sizes="64px" className="object-cover" fallbackLabel=" " />
-                          <span className="absolute right-1 top-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-gold px-1 text-[10px] font-bold text-ink">{l.qty}</span>
+                          <span className="absolute right-1 top-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-gold px-1 text-[10px] font-bold text-on-gold">{l.qty}</span>
                         </span>
                         <span className="flex-1 text-sm">{l.product.name}<span className="block text-xs text-muted">{[l.color, l.size && `Size ${l.size}`].filter(Boolean).join(" · ")}</span></span>
                         <span className="text-sm tabular-nums">{formatBDT(l.product.price * l.qty)}</span>
@@ -163,7 +163,7 @@ export default function CheckoutClient() {
                   </dl>
                   <AnimatePresence>
                     {Object.values(errors).some(Boolean) && (
-                      <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} role="alert" className="mt-5 text-xs text-[#E8A08A]">Please correct the highlighted fields.</motion.p>
+                      <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} role="alert" className="mt-5 text-xs text-[#B4533A]">Please correct the highlighted fields.</motion.p>
                     )}
                   </AnimatePresence>
                   <button type="submit" disabled={submitting || !hydrated} className="btn-gold mt-6 w-full">{submitting ? "Placing demo order…" : "Place Demo Order"}</button>

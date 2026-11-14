@@ -3,15 +3,37 @@
 @tailwind utilities;
 
 :root {
-  --ink: #101010;
-  --surface: #1a1a1a;
-  --gold: #c6a46a;
-  --bronze: #8b7355;
-  --cream: #f5f2ec;
-  --muted: #a5a5a5;
+  /* Premium off-white theme (default) — RGB triplets so Tailwind alpha works */
+  --c-bg: 247 245 240;        /* #F7F5F0 off-white page */
+  --c-surface: 239 235 227;   /* #EFEBE3 */
+  --c-surface-2: 231 226 216; /* #E7E2D8 */
+  --c-fg: 28 25 22;           /* #1C1916 warm charcoal text */
+  --c-muted: 107 101 93;      /* #6B655D */
+  --c-gold: 138 106 47;       /* #8A6A2F deep gold (AA on off-white) */
+  --c-gold-soft: 168 138 82;
+  --c-on-gold: 255 252 245;   /* text on gold fills */
+  --c-hv: 28 25 22;           /* button hover fill */
+  --c-hv-fg: 247 245 240;
+  --ink: #f7f5f0;
+  --gold: #8a6a2f;
 }
 
-html { background: var(--ink); color-scheme: dark; }
+/* Dark sections (hero, 3D showcase, image banners) keep the cinematic look */
+.dark-zone {
+  --c-bg: 16 16 16;
+  --c-surface: 26 26 26;
+  --c-surface-2: 34 34 34;
+  --c-fg: 255 255 255;
+  --c-muted: 165 165 165;
+  --c-gold: 198 164 106;
+  --c-gold-soft: 216 192 148;
+  --c-on-gold: 16 16 16;
+  --c-hv: 245 242 236;
+  --c-hv-fg: 16 16 16;
+  color: rgb(var(--c-fg));
+}
+
+html { background: var(--ink); color-scheme: light; }
 html.lenis, html.lenis body { height: auto; }
 .lenis.lenis-smooth { scroll-behavior: auto !important; }
 .lenis.lenis-stopped { overflow: hidden; }
@@ -22,7 +44,7 @@ body {
   overflow-x: clip;
 }
 
-::selection { background: var(--gold); color: var(--ink); }
+::selection { background: #c6a46a; color: #101010; }
 
 @layer components {
   .container-site { @apply mx-auto w-full max-w-site px-4 sm:px-6 lg:px-12; }
@@ -34,16 +56,16 @@ body {
   .btn {
     @apply relative inline-flex items-center justify-center gap-2 overflow-hidden px-7 py-4 text-[12px] font-semibold uppercase tracking-wide2 transition-colors duration-500 ease-luxe focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold disabled:cursor-not-allowed disabled:opacity-50;
   }
-  .btn-gold { @apply btn bg-gold text-ink hover:bg-cream; }
+  .btn-gold { @apply btn bg-gold text-on-gold hover:bg-hv hover:text-hv-fg; }
   .btn-ghost { @apply btn border border-white/30 text-white hover:border-gold hover:text-gold; }
-  .btn-dark { @apply btn bg-ink text-white hover:bg-bronze; }
+  .btn-dark { @apply btn bg-deep text-cream hover:bg-bronze; }
   .input {
     @apply w-full border border-white/15 bg-transparent px-4 py-3.5 text-sm text-white placeholder:text-white/40 transition-colors focus:border-gold focus:outline-none;
   }
   .chip {
     @apply border border-white/15 px-4 py-2 text-[11px] font-semibold uppercase tracking-wide2 text-white/70 transition-colors hover:border-gold hover:text-gold;
   }
-  .chip-active { @apply border-gold bg-gold text-ink hover:text-ink; }
+  .chip-active { @apply border-gold bg-gold text-on-gold hover:text-on-gold; }
 }
 
 .grain::after {
@@ -57,8 +79,8 @@ body {
 
 .img-fallback {
   background:
-    radial-gradient(120% 80% at 30% 20%, rgba(198,164,106,0.18), transparent 60%),
-    linear-gradient(160deg, #222 0%, #141414 60%, #1c1915 100%);
+    radial-gradient(120% 80% at 30% 20%, rgb(var(--c-gold) / 0.18), transparent 60%),
+    linear-gradient(160deg, rgb(var(--c-surface-2)) 0%, rgb(var(--c-surface)) 100%);
 }
 
 .no-scrollbar::-webkit-scrollbar { display: none; }

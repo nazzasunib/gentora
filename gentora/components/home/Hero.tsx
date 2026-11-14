@@ -49,7 +49,7 @@ export default function Hero() {
   );
 
   return (
-    <section ref={root} className="grain relative flex h-[100svh] min-h-[640px] items-end overflow-hidden bg-ink" aria-label="Introduction">
+    <section ref={root} className="dark-zone grain relative flex h-[100svh] min-h-[640px] items-end overflow-hidden bg-ink" aria-label="Introduction">
       <div ref={media} className="absolute inset-0 will-change-transform">
         <SmartImage src={IMG.hero} fallbackSrc={IMG.heroAlt} alt="A man in a tailored dark suit, framed in low cinematic light" fill priority sizes="100vw" className="object-cover object-[60%_30%]" fallbackLabel=" " />
       </div>

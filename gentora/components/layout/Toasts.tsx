@@ -11,7 +11,7 @@ export default function Toasts() {
       <AnimatePresence>
         {toasts.map((t) => (
           <motion.div key={t.id} layout initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 12 }} className="flex items-center gap-3 border border-gold/30 bg-surface/95 px-5 py-4 text-sm shadow-2xl backdrop-blur">
-            <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gold text-ink">
+            <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gold text-on-gold">
               {t.kind === "info" ? <Heart size={12} /> : <Check size={13} />}
             </span>
             {t.message}

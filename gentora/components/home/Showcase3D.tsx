@@ -96,7 +96,7 @@ export default function Showcase3D() {
   const product = getProductById(item.productId)!;
 
   return (
-    <section ref={section} className="relative bg-[#0b0b0b]" style={{ height: `${showcase.length * 110 + 40}vh` }} aria-label="Interactive 3D product showcase">
+    <section ref={section} className="dark-zone relative bg-[#0b0b0b]" style={{ height: `${showcase.length * 110 + 40}vh` }} aria-label="Interactive 3D product showcase">
       <div className="sticky top-0 flex h-[100svh] flex-col overflow-hidden">
         {/* atmosphere */}
         <div aria-hidden className="pointer-events-none absolute inset-0" style={{ background: "radial-gradient(60% 55% at 62% 50%, rgba(198,164,106,0.13), transparent 70%), radial-gradient(40% 40% at 20% 80%, rgba(139,115,85,0.10), transparent 70%)" }} />
