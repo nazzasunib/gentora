@@ -14,6 +14,8 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowRight, ArrowDown, Check } from "lucide-react";
 import { useCanRender3D } from "@/hooks/useCanRender3D";
+import { usePrefersReducedMotion } from "@/hooks/useReducedMotion";
+import PhotoStage, { MODEL_PHOTOS } from "@/components/home/PhotoStage";
 import ErrorBoundary from "@/components/3d/ErrorBoundary";
 import Reveal from "@/components/ui/Reveal";
 import Price from "@/components/ui/Price";
@@ -36,8 +38,14 @@ const EDIT = [
 
 export default function Hero() {
   const can3D = useCanRender3D();
+  const reducedMotion = usePrefersReducedMotion();
   const [failed, setFailed] = useState(false);
-  const animated = can3D === "yes" && !failed;
+  // photographic mode switches on automatically once the model photos exist in /public/images/hero/model
+  const [photos, setPhotos] = useState<boolean | null>(null);
+  useEffect(() => {
+    fetch(MODEL_PHOTOS[0].src, { method: "HEAD" }).then((r) => setPhotos(r.ok)).catch(() => setPhotos(false));
+  }, []);
+  const animated = photos === null ? false : photos ? !reducedMotion : can3D === "yes" && !failed;
   const root = useRef<HTMLElement>(null);
   const track = useRef<HTMLDivElement>(null);
   const intro = useRef<HTMLDivElement>(null);
@@ -111,7 +119,8 @@ export default function Hero() {
     else window.scrollTo({ top: y, behavior: "smooth" });
   };
 
-  const showStatic = can3D === "no" || failed;
+  const showStatic = photos === false && (can3D === "no" || failed);
+  const showStaticPhoto = photos === true && reducedMotion;
   const current = STAGES[stage];
 
   return (
@@ -125,12 +134,14 @@ export default function Hero() {
 
           {/* 3D stage */}
           <div className="absolute inset-0">
-            {animated && (
+            {animated && photos && <PhotoStage ctrl={ctrl} active={inView} onReady={() => setReady(true)} />}
+            {animated && !photos && (
               <ErrorBoundary fallback={<Failed onFail={() => setFailed(true)} />}>
                 <HeroScene ctrl={ctrl} active={inView} quality={quality} onReady={() => setReady(true)} />
               </ErrorBoundary>
             )}
             {showStatic && <StaticLook />}
+            {showStaticPhoto && <StaticLook src={MODEL_PHOTOS[4].src} />}
             <AnimatePresence>
               {animated && !ready && (
                 <motion.div className="absolute inset-0 flex items-center justify-center" exit={{ opacity: 0 }} transition={{ duration: 0.8 }} aria-hidden>
@@ -156,7 +167,7 @@ export default function Hero() {
                 </h1>
                 <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 1.1, ease }}>
                   <p className="mt-6 max-w-sm text-[15px] leading-relaxed text-white/70 sm:text-base">
-                    {showStatic ? "From weekend casual to boardroom formal — five pieces, one confident silhouette." : "Scroll to dress him — from weekend casual to boardroom formal, one piece at a time."}
+                    {showStatic || showStaticPhoto ? "From weekend casual to boardroom formal — five pieces, one confident silhouette." : "Scroll to dress him — from weekend casual to boardroom formal, one piece at a time."}
                   </p>
                   <div className="mt-8 flex flex-wrap gap-3">
                     <Link href="/shop" className="btn-gold group">Explore Collection <ArrowRight size={15} className="transition-transform duration-500 group-hover:translate-x-1" /></Link>
@@ -226,7 +237,7 @@ export default function Hero() {
             </>
           )}
 
-          {showStatic && (
+          {(showStatic || showStaticPhoto) && (
             <ol className="absolute right-6 top-1/2 z-10 hidden -translate-y-1/2 space-y-3 text-[10px] font-semibold uppercase tracking-wide2 text-white/60 lg:right-12 lg:block" aria-label="The complete look">
               {STAGES.slice(1, 5).map((s) => (
                 <li key={s.n} className="flex items-center gap-3"><Check size={11} className="text-gold" aria-hidden />{s.label}</li>
@@ -247,11 +258,11 @@ function Failed({ onFail }: { onFail: () => void }) {
 }
 
 /** Still of the complete look — shown without WebGL, on low-power devices or with reduced motion. */
-function StaticLook() {
+function StaticLook({ src = "/images/hero/look.jpg" }: { src?: string }) {
   return (
     <div className="absolute inset-0 flex items-end justify-center pb-16 lg:items-center lg:pb-0">
       <div className="relative h-[62%] w-full max-w-[520px] sm:h-[72%] lg:h-[86%]">
-        <Image src="/images/hero/look.jpg" alt="The complete GENTORA formal look: white shirt, charcoal trousers, leather belt, steel watch and cordovan Oxfords" fill priority sizes="(max-width: 1024px) 100vw, 520px" className="object-contain object-bottom [mask-image:radial-gradient(42%_48%_at_50%_52%,#000_62%,transparent_100%)]" />
+        <Image src={src} alt="The complete GENTORA formal look: white shirt, charcoal trousers, leather belt, steel watch and cordovan Oxfords" fill priority sizes="(max-width: 1024px) 100vw, 520px" className="object-contain object-bottom [mask-image:radial-gradient(42%_48%_at_50%_52%,#000_62%,transparent_100%)]" />
       </div>
     </div>
   );
