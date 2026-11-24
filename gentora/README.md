@@ -1,4 +1,4 @@
-# GENTORA — Premium Men's Fashion E-commerce (Demo)
+# Vesture’s — Premium Men's Fashion E-commerce (Demo)
 
 *Dress Sharp. Lead with Confidence.*
 
@@ -27,7 +27,7 @@ Node 18.18+ (Node 20/22 recommended).
 | Demo checkout + confirmation | `app/checkout` |
 | Account (demo), About, Help pages | `app/account`, `app/about`, `app/help/[slug]` |
 | Product & content data | `data/products.ts`, `data/help.ts`, `data/images.ts` |
-| Global state (persisted cart + wishlist) | `lib/store.ts` (localStorage key `gentora-shop`) |
+| Global state (persisted cart + wishlist) | `lib/store.ts` (localStorage key `vestures-shop`) |
 | Procedural 3D models | `components/3d/models.tsx` |
 
 ### Editing
@@ -37,8 +37,8 @@ Node 18.18+ (Node 20/22 recommended).
 
 ## Imagery & 3D – licensing
 - **Lifestyle, shirts, trousers, watch & bag photography**: Unsplash, loaded remotely under the [Unsplash License](https://unsplash.com/license). Review each image before launch and replace any you don't like in `data/images.ts`.
-- **If a remote image fails**, `components/ui/SmartImage.tsx` falls back to a local image (where provided) and then to an on-brand GENTORA panel — no broken-image icons.
-- **Watch, office bag and belt 3D models are GENTORA's own procedural Three.js models** — no third-party model files or licences needed. The studio stills in `public/images/studio/` are renders of these models.
+- **If a remote image fails**, `components/ui/SmartImage.tsx` falls back to a local image (where provided) and then to an on-brand Vesture’s panel — no broken-image icons.
+- **Watch, office bag and belt 3D models are Vesture’s own procedural Three.js models** — no third-party model files or licences needed. The studio stills in `public/images/studio/` are renders of these models.
 - To re-render stills after changing a model: `npm i -D playwright && npx playwright install chromium`, run `npm run dev`, then `npm run render:stills`.
 
 ## 3D performance & fallbacks

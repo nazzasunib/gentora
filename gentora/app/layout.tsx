@@ -17,19 +17,19 @@ import { SITE } from "@/lib/utils";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
-  title: { default: "GENTORA — Dress Sharp. Lead with Confidence.", template: "%s · GENTORA" },
+  title: { default: "Vesture’s — Dress Sharp. Lead with Confidence.", template: "%s · Vesture’s" },
   description: SITE.description,
-  keywords: ["men's formal shirts", "formal pants", "leather belts", "men's watches", "office bags", "Bangladesh", "GENTORA"],
+  keywords: ["men's formal shirts", "formal pants", "leather belts", "men's watches", "office bags", "Bangladesh", "Vesture’s"],
   openGraph: {
     type: "website",
-    siteName: "GENTORA",
-    title: "GENTORA — Dress Sharp. Lead with Confidence.",
+    siteName: "Vesture’s",
+    title: "Vesture’s — Dress Sharp. Lead with Confidence.",
     description: SITE.description,
-    images: [{ url: "/og.jpg", width: 1200, height: 630, alt: "GENTORA — premium men's fashion" }],
+    images: [{ url: "/og.jpg", width: 1200, height: 630, alt: "Vesture’s — premium men's fashion" }],
     locale: "en_BD",
   },
-  twitter: { card: "summary_large_image", title: "GENTORA", description: SITE.description, images: ["/og.jpg"] },
-  icons: { icon: "/icons/favicon.svg" },
+  twitter: { card: "summary_large_image", title: "Vesture’s", description: SITE.description, images: ["/og.jpg"] },
+  icons: { icon: [{ url: "/favicon.ico", sizes: "32x32" }, { url: "/icons/icon.png", type: "image/png", sizes: "512x512" }], apple: "/icons/apple-icon.png" },
 };
 
 export const viewport: Viewport = { themeColor: "#F7F5F0", width: "device-width", initialScale: 1 };

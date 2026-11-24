@@ -39,7 +39,7 @@ export const HELP_PAGES: Record<string, { title: string; intro: string; sections
   },
   privacy: {
     title: "Privacy Policy",
-    intro: "Sample policy for the GENTORA demo storefront.",
+    intro: "Sample policy for the Vesture’s demo storefront.",
     sections: [
       { h: "What we store", p: ["This demo stores your cart and wishlist only in your own browser's local storage. No personal data is sent to a server."] },
       { h: "Forms", p: ["Newsletter, account and checkout forms are frontend demonstrations — submitted details are not transmitted or saved."] },
@@ -48,10 +48,10 @@ export const HELP_PAGES: Record<string, { title: string; intro: string; sections
   },
   terms: {
     title: "Terms & Conditions",
-    intro: "Sample terms for the GENTORA demo storefront.",
+    intro: "Sample terms for the Vesture’s demo storefront.",
     sections: [
       { h: "Demonstration only", p: ["Products, prices and reviews on this site are illustrative. No orders are fulfilled and no payments are taken."] },
-      { h: "Imagery", p: ["Lifestyle photography is sourced from Unsplash under the Unsplash License. Accessory studio renders are generated from GENTORA's own 3D models."] },
+      { h: "Imagery", p: ["Lifestyle photography is sourced from Unsplash under the Unsplash License. Accessory studio renders are generated from Vesture’s own 3D models."] },
       { h: "Before launch", p: ["Replace this page with terms reviewed for your business."] },
     ],
   },

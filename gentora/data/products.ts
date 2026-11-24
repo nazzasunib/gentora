@@ -273,7 +273,7 @@ export const products: Product[] = [
     sizes: BELT_SIZES,
     short: "Full-grain leather with a brushed gold-tone buckle.",
     description:
-      "Cut from a single strip of vegetable-tanned full-grain leather, hand-edged and burnished. The brushed champagne-tone buckle is a quiet signature of GENTORA.",
+      "Cut from a single strip of vegetable-tanned full-grain leather, hand-edged and burnished. The brushed champagne-tone buckle is a quiet signature of Vesture’s.",
     specs: [
       { label: "Material", value: "Full-grain cowhide leather" },
       { label: "Width", value: "35 mm" },

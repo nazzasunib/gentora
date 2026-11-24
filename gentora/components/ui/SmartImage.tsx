@@ -34,7 +34,7 @@ export default function SmartImage({ src, alt, fallbackSrc, fallbackLabel, class
           <>
             <span className="font-display text-3xl tracking-[0.3em] text-gold/80">G</span>
             <span className="h-px w-10 bg-gold/40" />
-            <span className="px-6 text-[10px] font-semibold uppercase tracking-luxe text-white/50">{fallbackLabel ?? "GENTORA"}</span>
+            <span className="px-6 text-[10px] font-semibold uppercase tracking-luxe text-white/50">{fallbackLabel ?? "Vesture’s"}</span>
           </>
         )}
       </div>

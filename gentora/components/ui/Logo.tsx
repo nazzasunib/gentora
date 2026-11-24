@@ -1,13 +1,30 @@
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 
+/** Vesture’s wordmark (public/brand/vestures-logo.png used as a mask → follows the text colour). */
+export function LogoMark({ className }: { className?: string }) {
+  return (
+    <span
+      aria-hidden
+      className={cn("block aspect-[746/364] bg-current", className)}
+      style={{
+        WebkitMaskImage: "url(/brand/vestures-logo.png)",
+        maskImage: "url(/brand/vestures-logo.png)",
+        WebkitMaskSize: "contain",
+        maskSize: "contain",
+        WebkitMaskRepeat: "no-repeat",
+        maskRepeat: "no-repeat",
+        WebkitMaskPosition: "left center",
+        maskPosition: "left center",
+      }}
+    />
+  );
+}
+
 export default function Logo({ className, onClick }: { className?: string; onClick?: () => void }) {
   return (
-    <Link href="/" onClick={onClick} aria-label="GENTORA — home" className={cn("group inline-flex flex-col items-start leading-none", className)}>
-      <span className="font-display text-[19px] tracking-[0.28em] sm:text-[26px] sm:tracking-[0.34em] font-medium text-white transition-colors duration-500 group-hover:text-gold">
-        GENTORA
-      </span>
-      <span className="mt-1 block h-px w-full origin-left scale-x-[0.25] bg-gold transition-transform duration-700 ease-luxe group-hover:scale-x-100" />
+    <Link href="/" onClick={onClick} aria-label="Vesture’s — home" className={cn("group inline-flex items-center leading-none text-white transition-colors duration-500 hover:text-gold", className)}>
+      <LogoMark className="h-9 sm:h-11 lg:h-12" />
     </Link>
   );
 }

@@ -82,7 +82,7 @@ float dBand = (1.0 - smoothstep(0.0, 0.01, abs(dDelta))) * step(0.002, uDProgres
       )
       .replace("#include <emissivemap_fragment>", "#include <emissivemap_fragment>\ntotalEmissiveRadiance += uDEdge * dBand;");
   };
-  material.customProgramCacheKey = () => "gentora-dissolve";
+  material.customProgramCacheKey = () => "vestures-dissolve";
   material.side = THREE.DoubleSide;
   return u;
 }

@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * GENTORA procedural 3D products — built entirely in Three.js, so there are no
+ * Vesture’s procedural 3D products — built entirely in Three.js, so there are no
  * external model files, no licensing concerns and nothing to 404.
  */
 import { useMemo } from "react";

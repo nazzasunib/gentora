@@ -8,14 +8,14 @@ export const discountPct = (price: number, compareAt?: number) =>
   compareAt && compareAt > price ? Math.round(((compareAt - price) / compareAt) * 100) : 0;
 
 export const SITE = {
-  name: "GENTORA",
+  name: "Vesture’s",
   tagline: "Dress Sharp. Lead with Confidence.",
   description:
-    "GENTORA — premium men's formal shirts, trousers, leather belts, wristwatches and office bags for the modern professional.",
-  url: "https://gentora.example.com",
+    "Vesture’s — premium men's formal shirts, trousers, leather belts, wristwatches and office bags for the modern professional.",
+  url: "https://vestures.example.com",
   // Editable demo contact details — replace before going live.
   contact: {
-    email: "hello@gentora.example",
+    email: "hello@vestures.example",
     phone: "+880 1XXX-XXXXXX",
     address: "Your Store Address, Dhaka (demo)",
     hours: "Sat–Thu · 10:00–20:00",

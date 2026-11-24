@@ -1,4 +1,4 @@
-// Renders GENTORA's procedural 3D products to studio JPGs in public/images/studio.
+// Renders Vesture’s procedural 3D products to studio JPGs in public/images/studio.
 // Usage: npm run dev   (in another terminal)  →  node scripts/render-stills.mjs
 import { chromium } from "playwright";
 import { mkdirSync } from "node:fs";

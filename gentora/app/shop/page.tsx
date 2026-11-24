@@ -4,8 +4,8 @@ import ShopClient from "./ShopClient";
 
 export const metadata: Metadata = {
   title: "Shop the Collection",
-  description: "Shop GENTORA formal shirts, tailored trousers, leather belts, wristwatches and office bags. Filter by category, search and sort by price.",
-  openGraph: { title: "Shop the Collection · GENTORA" },
+  description: "Shop Vesture’s formal shirts, tailored trousers, leather belts, wristwatches and office bags. Filter by category, search and sort by price.",
+  openGraph: { title: "Shop the Collection · Vesture’s" },
 };
 
 export default function ShopPage() {

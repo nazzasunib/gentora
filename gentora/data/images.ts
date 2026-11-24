@@ -2,7 +2,7 @@
  * Central image registry.
  * Remote photography is sourced from Unsplash (free to use under the Unsplash License:
  * https://unsplash.com/license). Swap any URL here and it updates everywhere.
- * Local /images/studio/* files are studio renders generated from GENTORA's own
+ * Local /images/studio/* files are studio renders generated from Vesture’s own
  * procedural 3D models (see components/3d) — no third-party licence required.
  */
 const u = (id: string, w = 1600) =>

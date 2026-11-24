@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * GENTORA hero figure — a premium, faceless fashion mannequin with two complete
+ * Vesture’s hero figure — a premium, faceless fashion mannequin with two complete
  * procedural outfits (casual → formal). Everything is generated in Three.js:
  * no model files to download, nothing to license, nothing to 404.
  *

@@ -53,7 +53,7 @@ export default function SearchOverlay() {
               <button onClick={close} aria-label="Close search" className="p-2 text-white/70 hover:text-gold"><X size={24} /></button>
             </div>
             <motion.form onSubmit={submit} initial={{ y: 30, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.1, duration: 0.6, ease: [0.22, 1, 0.36, 1] }} className="mx-auto mt-10 max-w-3xl">
-              <label htmlFor="site-search" className="eyebrow">Search GENTORA</label>
+              <label htmlFor="site-search" className="eyebrow">Search Vesture’s</label>
               <div className="mt-4 flex items-center gap-4 border-b border-white/25 pb-4 focus-within:border-gold">
                 <Search className="text-gold" size={26} strokeWidth={1.25} />
                 <input ref={input} id="site-search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="Shirts, watches, navy…" className="w-full bg-transparent font-display text-3xl font-light placeholder:text-white/25 focus:outline-none sm:text-5xl" autoComplete="off" />

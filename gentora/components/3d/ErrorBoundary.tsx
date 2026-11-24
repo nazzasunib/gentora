@@ -8,7 +8,7 @@ export default class ErrorBoundary extends Component<{ fallback: ReactNode; chil
     return { failed: true };
   }
   componentDidCatch(err: unknown) {
-    if (process.env.NODE_ENV !== "production") console.warn("[GENTORA 3D] falling back to images:", err);
+    if (process.env.NODE_ENV !== "production") console.warn("[Vesture’s 3D] falling back to images:", err);
   }
   render() {
     return this.state.failed ? this.props.fallback : this.props.children;

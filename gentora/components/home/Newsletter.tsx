@@ -24,7 +24,7 @@ export default function Newsletter() {
     <section className="relative overflow-hidden border-t border-line bg-surface py-28 lg:py-32" aria-labelledby="nl-title">
       <div className="container-site grid items-end gap-12 lg:grid-cols-2">
         <div>
-          <p className="eyebrow mb-5">The GENTORA Letter</p>
+          <p className="eyebrow mb-5">The Vesture’s Letter</p>
           <h2 id="nl-title" className="h-display text-5xl sm:text-7xl"><RevealText text="STAY IN STYLE" /></h2>
           <p className="mt-6 max-w-md text-[15px] leading-relaxed text-muted">Get updates on new collections, exclusive offers and style inspiration.</p>
         </div>

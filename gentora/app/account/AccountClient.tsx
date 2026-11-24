@@ -36,7 +36,7 @@ export default function AccountClient() {
           </div>
           <div className="border border-line bg-surface p-10">
             <p className="eyebrow">Member benefits</p>
-            <h2 className="h-display mt-4 text-4xl">The GENTORA circle</h2>
+            <h2 className="h-display mt-4 text-4xl">The Vesture’s circle</h2>
             <ul className="mt-6 space-y-3 text-sm text-white/70">
               <li>— Early access to new collections</li>
               <li>— Order tracking and easy returns</li>

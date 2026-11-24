@@ -31,14 +31,14 @@ export default function BrandIntro() {
         </div>
 
         <div className="lg:col-span-5 lg:col-start-8">
-          <Reveal y={12}><p className="eyebrow mb-6">The GENTORA Philosophy</p></Reveal>
+          <Reveal y={12}><p className="eyebrow mb-6">The Vesture’s Philosophy</p></Reveal>
           <h2 className="h-display text-5xl sm:text-6xl lg:text-7xl">
             <RevealText text="THE ART OF" /> <br />
             <RevealText text="DRESSING WELL" className="italic text-gold" delay={0.15} />
           </h2>
           <Reveal delay={0.2}>
             <p className="mt-8 text-[17px] leading-[1.8] text-white/70">
-              GENTORA brings together timeless style and modern sophistication. From perfectly tailored shirts to refined accessories, every detail is selected for the modern professional.
+              Vesture’s brings together timeless style and modern sophistication. From perfectly tailored shirts to refined accessories, every detail is selected for the modern professional.
             </p>
           </Reveal>
           <Reveal delay={0.3}>

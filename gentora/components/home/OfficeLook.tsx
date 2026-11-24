@@ -34,7 +34,7 @@ export default function OfficeLook() {
         <div className="relative min-w-0 lg:col-span-6">
           <div className="sticky top-28">
             <div className="relative aspect-[4/5] overflow-hidden bg-[#E2DBCE]">
-              <SmartImage src={officeLook.image} alt="Model wearing the complete GENTORA office look" fill sizes="(max-width:1024px) 100vw, 50vw" className="object-cover" fallbackLabel="The Complete Office Look" />
+              <SmartImage src={officeLook.image} alt="Model wearing the complete Vesture’s office look" fill sizes="(max-width:1024px) 100vw, 50vw" className="object-cover" fallbackLabel="The Complete Office Look" />
               {HOTSPOTS.map((h, i) => (
                 <button
                   key={i}

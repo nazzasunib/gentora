@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import { SITE } from "@/lib/utils";
+import { LogoMark } from "@/components/ui/Logo";
 
 const cols = [
   {
@@ -28,7 +29,8 @@ export default function Footer() {
     <footer className="relative overflow-hidden border-t border-line bg-ink pt-20">
       <div className="container-site grid gap-14 pb-16 lg:grid-cols-[1.3fr_2fr]">
         <div>
-          <p className="font-display text-4xl tracking-[0.3em]">GENTORA</p>
+          <LogoMark className="h-14 sm:h-16" />
+          <span className="sr-only">Vesture’s</span>
           <p className="mt-4 font-display text-xl italic text-gold">{SITE.tagline}</p>
           <ul className="mt-8 space-y-3 text-sm text-muted">
             <li className="flex items-center gap-3"><Mail size={15} className="text-gold" /> {SITE.contact.email}</li>
@@ -42,7 +44,7 @@ export default function Footer() {
               { Icon: Instagram, label: "Instagram", href: "https://www.instagram.com/" },
               { Icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/" },
             ].map(({ Icon, label, href }) => (
-              <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={`GENTORA on ${label} (opens in new tab)`} className="flex h-11 w-11 items-center justify-center border border-white/15 text-white/70 transition-colors hover:border-gold hover:text-gold">
+              <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={`Vesture’s on ${label} (opens in new tab)`} className="flex h-11 w-11 items-center justify-center border border-white/15 text-white/70 transition-colors hover:border-gold hover:text-gold">
                 <Icon size={17} strokeWidth={1.5} />
               </a>
             ))}
@@ -62,11 +64,11 @@ export default function Footer() {
         </div>
       </div>
       <div className="pointer-events-none select-none overflow-hidden" aria-hidden>
-        <p className="whitespace-nowrap text-center font-display text-[22vw] font-light leading-[0.8] tracking-[0.08em] text-white/[0.035]">GENTORA</p>
+        <p className="whitespace-nowrap text-center font-display text-[16vw] font-light leading-[0.8] tracking-[0.06em] text-white/[0.035]">VESTURE’S</p>
       </div>
       <div className="border-t border-line">
         <div className="container-site flex flex-col items-center justify-between gap-3 py-6 text-xs text-muted sm:flex-row">
-          <p>© 2026 GENTORA. All Rights Reserved.</p>
+          <p>© 2026 Vesture’s. All Rights Reserved.</p>
           <p>Demo storefront · Prices in BDT (৳) · No real payments are processed</p>
         </div>
       </div>

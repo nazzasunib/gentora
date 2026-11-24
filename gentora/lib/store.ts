@@ -87,7 +87,7 @@ export const useShop = create<ShopState>()(
       dismissToast: (id) => set((s) => ({ toasts: s.toasts.filter((t) => t.id !== id) })),
     }),
     {
-      name: "gentora-shop",
+      name: "vestures-shop",
       version: 1,
       storage: createJSONStorage(() => {
         try {

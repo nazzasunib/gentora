@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: p.name,
     description: `${p.short} ${p.description}`.slice(0, 158),
-    openGraph: { title: `${p.name} · GENTORA`, description: p.short, images: p.images[0].startsWith("/") ? [p.images[0]] : undefined },
+    openGraph: { title: `${p.name} · Vesture’s`, description: p.short, images: p.images[0].startsWith("/") ? [p.images[0]] : undefined },
   };
 }
 
@@ -29,7 +29,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
     "@type": "Product",
     name: product.name,
     description: product.description,
-    brand: { "@type": "Brand", name: "GENTORA" },
+    brand: { "@type": "Brand", name: "Vesture’s" },
     category: getCategory(product.category)?.name,
     image: product.images.map((i) => (i.startsWith("/") ? `${SITE.url}${i}` : i)),
     offers: { "@type": "Offer", priceCurrency: "BDT", price: product.price, availability: "https://schema.org/InStock" },

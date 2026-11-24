@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * GENTORA hero — "The Transformation".
+ * Vesture’s hero — "The Transformation".
  * A pinned, scroll-controlled 3D scene: the figure is dressed from premium casual
  * to complete formal as the visitor scrolls, then the five pieces are presented.
  */
@@ -124,7 +124,7 @@ export default function Hero() {
   const current = STAGES[stage];
 
   return (
-    <section ref={root} className="dark-zone relative bg-[#0b0b0b]" aria-label="The GENTORA transformation — from casual to formal">
+    <section ref={root} className="dark-zone relative bg-[#0b0b0b]" aria-label="The Vesture’s transformation — from casual to formal">
       <div ref={track} className={cn("relative", animated && "h-[480vh] md:h-[560vh]")}>
         <div className={cn("relative overflow-hidden", animated ? "sticky top-0 h-[100svh]" : "h-[100svh] min-h-[640px]")}>
           {/* studio backdrop */}
@@ -262,7 +262,7 @@ function StaticLook({ src = "/images/hero/look.jpg" }: { src?: string }) {
   return (
     <div className="absolute inset-0 flex items-end justify-center pb-16 lg:items-center lg:pb-0">
       <div className="relative h-[62%] w-full max-w-[520px] sm:h-[72%] lg:h-[86%]">
-        <Image src={src} alt="The complete GENTORA formal look: white shirt, charcoal trousers, leather belt, steel watch and cordovan Oxfords" fill priority sizes="(max-width: 1024px) 100vw, 520px" className="object-contain object-bottom [mask-image:radial-gradient(42%_48%_at_50%_52%,#000_62%,transparent_100%)]" />
+        <Image src={src} alt="The complete Vesture’s formal look: white shirt, charcoal trousers, leather belt, steel watch and cordovan Oxfords" fill priority sizes="(max-width: 1024px) 100vw, 520px" className="object-contain object-bottom [mask-image:radial-gradient(42%_48%_at_50%_52%,#000_62%,transparent_100%)]" />
       </div>
     </div>
   );
